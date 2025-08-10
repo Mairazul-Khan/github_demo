@@ -1,76 +1,463 @@
-<!DOCTYPE HTML>
-<!--
-	2025 - Devops engineer  -- eidted by me
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>2025</title>
-	<meta charset="utf-8" />
-	<meta name="description" content="Location : 127.0.0.1:1337/Mairazul Khan &amp; U1FgpxieKrOnly5GJg3TiA==">
-	<meta name="keywords"
-		content="Devops engineer, Mairazul Khan, hall of fame, responsive disclosure, information tehnology">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="revisit-after" content="1 days">
-	<meta name="author" content="Mairazul Khan">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-	<link rel="stylesheet" href="assets/css/main.css" />
-	<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	<link rel="shortcut icon" href="assets/css/images/icon.ico">
-	<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/images/icon.ico" /><![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mairazul Khan - DevOps Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #06b6d4;
+            --secondary: #3b82f6;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 31px;
+            }
+        }
+    </style>
 </head>
+<body class="font-sans text-gray-800">
+    <!-- Header & Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-cyan-500"></div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-cyan-500 transition">Home</a>
+                <a href="#skills" class="hover:text-cyan-500 transition">Skills</a>
+                <a href="#projects" class="hover:text-cyan-500 transition">Projects</a>
+                <a href="#experience" class="hover:text-cyan-500 transition">Experience</a>
+                <a href="#contact" class="hover:text-cyan-500 transition">Contact</a>
+            </div>
+            <button class="md:hidden focus:outline-none" id="menu-toggle">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-white w-full py-2 px-4 shadow-lg" id="mobile-menu">
+            <a href="#home" class="block py-2 hover:text-cyan-500 transition">Home</a>
+            <a href="#skills" class="block py-2 hover:text-cyan-500 transition">Skills</a>
+            <a href="#projects" class="block py-2 hover:text-cyan-500 transition">Projects</a>
+            <a href="#experience" class="block py-2 hover:text-cyan-500 transition">Experience</a>
+            <a href="#contact" class="block py-2 hover:text-cyan-500 transition">Contact</a>
+        </div>
+    </header>
 
-<body class="Loading">
-	<div id="wrapper">
-		<div id="bg"></div>
-		<div id="overlay"></div>
-		<div id="main">
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white pt-32 pb-20">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-5xl md:text-6xl font-bold mb-4">Mairazul Khan</h1>
+                <h2 class="text-3xl md:text-4xl mb-6">DevOps Engineer</h2>
+                <p class="text-lg mb-8">Building scalable, reliable infrastructure with CI/CD pipelines and cloud-native technologies.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-cyan-600 px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition">Get In Touch</a>
+                    <a href="#projects" class="border-2 border-white px-6 py-3 rounded-lg font-medium hover:bg-white hover:text-cyan-600 transition">View Projects</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="rounded-full overflow-hidden border-4 border-white shadow-lg w-64 h-64">
+                    <img src="img5.png"alt="Professional headshot of Mairazul Khan, a DevOps engineer in business casual attire with modern office background" class="w-full h-full object-cover" />
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- Header -->
-			<header id="header">
-				<h1>Mairazul Khan</h1>
-				<p>Devops Engineer</p>
-				<nav>
-					<ul>
-						<li><a href="https://twitter.com/@mairazulkhan" class="icon fa-twitter" target="_blank"><span
-									class="label">Twitter</span></a></li>
-						<li><a href="https://www.linkedin.com/in/Mairazul-khan" class="icon fa-linkedin"
-								target="_blank"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://www.youtube.com/channel/Mairazulkhan"
-								class="icon fa-youtube-play" target="_blank"><span class="label">YouTube</span></a></li>
-						<li><a href="https://github.com/Mairazul-Khan" class="icon fa-github" target="_blank"><span
-									class="label">Github</span></a></li>
-						<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=new" class="icon fa-envelope-o" target="_blank"><span
-									class="label">Email</span></a></li>	
-						<li><a href="https://gitlab.com/Mairazul-Khan" class="icon fa-gitlab" target="_blank"><span
-									class="label">gitlab</span></a></li>
-					</ul>
-				</nav>
-			</header>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Technical Skills</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Cloud Skills -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Cloud</h3>
+                    <p class="text-gray-600">AWS, Azure, GCP</p>
+                </div>
 
-			<!-- Footer -->
-			<footer id="footer">
-				<span class="copyright">&copy; KTA 2025 All Rights Reserved.</a></span>
-			</footer>
+                <!-- CI/CD -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">CI/CD</h3>
+                    <p class="text-gray-600">Jenkins, GitHub Actions, GitLab CI</p>
+                </div>
 
-		</div>
-	</div>
-	<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	<script>
-		window.onload = function () {
-			document.body.className = '';
-		}
-		window.ontouchmove = function () {
-			return false;
-		}
-		window.onorientationchange = function () {
-			document.body.scrollTop = 0;
-		}
-	</script>
+                <!-- Containerization -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Containers</h3>
+                    <p class="text-gray-600">Docker, Kubernetes</p>
+                </div>
+
+                <!-- IaC -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Infrastructure</h3>
+                    <p class="text-gray-600">Terraform, Ansible</p>
+                </div>
+
+                <!-- Monitoring -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Monitoring</h3>
+                    <p class="text-gray-600">Prometheus, Grafana, ELK</p>
+                </div>
+
+                <!-- Scripting -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Scripting</h3>
+                    <p class="text-gray-600">Bash, Python</p>
+                </div>
+
+                <!-- Version Control -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fab fa-git-alt"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Version Control</h3>
+                    <p class="text-gray-600">Git, GitHub, GitLab</p>
+                </div>
+
+                <!-- Databases -->
+                <div class="skill-card bg-white p-6 rounded-lg shadow-md transition">
+                    <div class="text-cyan-500 text-4xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Databases</h3>
+                    <p class="text-gray-600">PostgreSQL, MySQL, MongoDB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+            
+                    
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="project-image h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/50657c5f-f262-448a-9959-fe9216d4553b.png" alt="CI/CD pipeline visualization showing stages from code commit to production deployment with automated testing steps" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Automated CI/CD Pipeline</h3>
+                        <p class="text-gray-600 mb-4">Implemented a full CI/CD pipeline for a microservices architecture reducing deployment time by 80%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-xs">Jenkins</span>
+                            <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs">Docker</span>
+                            <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-xs">Kubernetes</span>
+                        </div>
+                        <a href="#" class="text-cyan-500 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="project-image h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da5380f0-b529-47c6-89d1-95c552e87a4a.png" alt="Cloud architecture diagram showing Terraform managed infrastructure across multiple AWS regions" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Infrastructure as Code</h3>
+                        <p class="text-gray-600 mb-4">Automated cloud infrastructure provisioning with Terraform managing 100+ AWS resources.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-xs">Terraform</span>
+                            <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-xs">AWS</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs">GitLab CI</span>
+                        </div>
+                        <a href="#" class="text-cyan-500 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="project-image h-48 overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55b155b1-c249-49a4-aff5-e9780203f67c.png" alt="Monitoring dashboard screenshot showing Kubernetes cluster metrics with Grafana visualization of CPU, memory and network usage" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Observability Platform</h3>
+                        <p class="text-gray-600 mb-4">Built a comprehensive monitoring solution reducing incident response time by 60%.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-xs">Prometheus</span>
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-xs">Grafana</span>
+                            <span class="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-xs">ELK Stack</span>
+                        </div>
+                        <a href="#" class="text-cyan-500 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Professional Experience</h2>
+            
+            <div class="relative timeline">
+                <!-- Experience 1 -->
+                <div class="mb-12 relative">
+                    <div class="md:w-1/2 mx-auto md:ml-0 md:mr-auto pl-8 md:pl-0 pr-8 md:pr-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md relative">
+                            <div class="absolute -left-10 top-6 w-6 h-6 rounded-full bg-cyan-500 border-4 border-white md:left-auto md:right-0 md:-mr-10"></div>
+                            <h3 class="font-bold text-xl mb-1">Senior DevOps Engineer</h3>
+                            <p class="text-gray-600 font-medium mb-2">TechCorp Solutions | Jan 2021 - Present</p>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Led migration of monolith to microservices architecture on Kubernetes</li>
+                                <li>Designed and implemented GitOps workflow reducing deployment failures by 45%</li>
+                                <li>Optimized AWS infrastructure costs saving $80k annually</li>
+                                <li>Implemented security scanning in CI pipeline detecting vulnerabilities early</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 2 -->
+                <div class="mb-12 relative">
+                    <div class="md:w-1/2 mx-auto ml-auto pl-8 pr-8 md:pl-0 md:pr-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md relative">
+                            <div class="absolute -left-10 top-6 w-6 h-6 rounded-full bg-cyan-500 border-4 border-white md:left-auto md:right-0 md:-mr-10"></div>
+                            <h3 class="font-bold text-xl mb-1">DevOps Engineer</h3>
+                            <p class="text-gray-600 font-medium mb-2">CloudScale Inc | Mar 2018 - Dec 2020</p>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Automated infrastructure provisioning reducing deployment time from 8hrs to 20min</li>
+                                <li>Implemented centralized logging system reducing troubleshooting time by 70%</li>
+                                <li>Developed CI/CD pipelines for multiple development teams</li>
+                                <li>Containerized legacy applications improving scalability and resource usage</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience 3 -->
+                <div class="mb-12 relative">
+                    <div class="md:w-1/2 mx-auto md:ml-0 md:mr-auto pl-8 md:pl-0 pr-8 md:pr-0">
+                        <div class="bg-white p-6 rounded-lg shadow-md relative">
+                            <div class="absolute -left-10 top-6 w-6 h-6 rounded-full bg-cyan-500 border-4 border-white md:left-auto md:right-0 md:-mr-10"></div>
+                            <h3 class="font-bold text-xl mb-1">Systems Administrator</h3>
+                            <p class="text-gray-600 font-medium mb-2">DataSystems LLC | Jun 2015 - Feb 2018</p>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Managed Linux server infrastructure (200+ servers)</li>
+                                <li>Automated routine tasks saving 15hrs per week</li>
+                                <li>Implemented backup and disaster recovery solution</li>
+                                <li>Migrated on-prem infrastructure to AWS</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Certifications</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Certification 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-cyan-500 mb-4">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">AWS Solutions Architect</h3>
+                    <p class="text-gray-600">Associate - 2025</p>
+                </div>
+
+                <!-- Certification 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-cyan-500 mb-4">
+                        <i class="fab fa-microsoft"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Microsoft Azure</h3>
+                    <p class="text-gray-600">Fundamentals - 2025</p>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-cyan-500 mb-4">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Certified Kubernetes Administrator</h3>
+                    <p class="text-gray-600">CKA - 2025</p>
+                </div>
+
+                <!-- Certification 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl text-cyan-500 mb-4">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-2">Terraform Associate</h3>
+                    <p class="text-gray-600">Hashicorp - 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-4">Connect With Me</h3>
+                    <p class="mb-6">I'm always interested in hearing about new projects and opportunities. Feel free to reach out!</p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="text-cyan-400 text-xl mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <span>mairazulkhan@gmail.com</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-cyan-400 text-xl mr-4">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <span>linkedin.com/in/Mairazul-khan</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="text-cyan-400 text-xl mr-4">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <span>github.com/Mairazul-khan</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block mb-1">Name</label>
+                            <input type="text" id="name" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-1">Email</label>
+                            <input type="email" id="email" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-1">Message</label>
+                            <textarea id="message" rows="5" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-cyan-400"></textarea>
+                        </div>
+                        <button type="submit" class="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-3 rounded-lg font-medium transition w-full md:w-auto">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://github.com/Mairazul-Khan" class="text-xl hover:text-cyan-400 transition">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/Mairazul-khan" class="text-xl hover:text-cyan-400 transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+				<a href="https://gitlab.com/Mairazul-Khan" class="text-xl hover:text-cyan-400 transition">
+                    <i class="fab fa-gitlab"></i>
+                </a>
+            </div>
+            <p>© 2025 KTA. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#home" class="fixed bottom-6 right-6 bg-cyan-500 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-cyan-600 transition">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Highlight active nav link on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY;
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('text-cyan-500');
+                } else {
+                    document.querySelector(`nav a[href="#${sectionId}"]`).classList.remove('text-cyan-500');
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
+
+Bookmark message
+Copy message
+Export
+
+
+Notifications
+Scroll to bottom
